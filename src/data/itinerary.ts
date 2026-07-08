@@ -215,21 +215,20 @@ export const itineraryData: DailyItinerary[] = [
   {
     day: 3,
     dayOfWeek: '週三',
-    theme: '新城海岸海龜浮潛、來間島探索與夜探生態',
+    theme: '希爾頓度假時光、來間島探索與夜探生態',
     flow: [
       {
-        time: '08:30',
-        title: 'Aragusuku Beach 新城海岸浮潛',
-        type: 'attraction',
-        mapCode: '310 326 777*00',
-        notes: '海龜極常出沒的珊瑚礁海灘，進行晨間浮潛',
-        details: '新加入行程！此處水淺珊瑚豐富，早上光線柔和，是極高機率與野生海龜共游的浮潛天堂。'
+        time: '08:00',
+        title: '專注享受 Hilton 飯店設施與美味早餐',
+        type: 'hotel',
+        notes: '今日上午無外安排景點，在希爾頓度假村享受悠閒時光',
+        details: '悠閒享用 Hilton 豐盛的自助早餐，隨後使用度假村的高空泳池、健身房或沙灘散步，完全放鬆身心。'
       },
       {
-        time: '11:00',
-        title: '返回 Canopy by Hilton 盥洗並辦理退房',
-        type: 'hotel',
-        notes: '淋浴更衣後退房，準備前往市區'
+        time: '11:30',
+        title: '辦理退房，出發前往市區',
+        type: 'transport',
+        notes: '離開 Hilton 往南部出發'
       },
       {
         time: '12:00',
@@ -339,15 +338,23 @@ export const itineraryData: DailyItinerary[] = [
         notes: '盥洗並更衣休息'
       },
       {
-        time: '16:00',
+        time: '15:30',
+        title: '下午茶點心：Blue Seal 冰淇淋 (久貝店)',
+        type: 'food',
+        mapCode: '310 452 355*00',
+        notes: '調整時間！在傍晚喝咖啡前，先享用消暑冰淇淋，避免晚餐後吃甜食',
+        details: '位於久貝店，推薦紅芋、鹽金楚糕等在地限定口味。將此行程移至下午，能讓晚上的腸胃更無負擔。'
+      },
+      {
+        time: '16:15',
         title: '咖啡時光：coffee shop Majya',
         type: 'food',
         mapCode: '310 453 252*44',
-        notes: '浮潛大體力消耗後，享受職人手沖黑咖啡',
-        details: '新加入咖啡點！這是一間非常精緻的手沖咖啡館，來一杯高質感的現沖黑咖啡，能迅速恢復精神。'
+        notes: '享受職人現沖的高質感手沖黑咖啡',
+        details: '這是一間非常精緻的手沖咖啡館，享受熱騰騰或冰涼的現沖黑咖啡，能迅速恢復浮潛大消耗體力後的精神。'
       },
       {
-        time: '17:00',
+        time: '17:15',
         title: '返回 Hotel Miyakojima 休息',
         type: 'hotel',
         notes: '短暫睡覺或休息補眠'
@@ -359,14 +366,6 @@ export const itineraryData: DailyItinerary[] = [
         mapCode: '310 452 465*00',
         notes: '點選招牌大香菇植物肉堡，必須要求「去洋蔥」',
         details: '宮古島著名的美式漢堡，提供植物肉與厚實大香菇結合的素食漢堡。'
-      },
-      {
-        time: '19:30',
-        title: 'Blue Seal 冰淇淋 (久貝店)',
-        type: 'food',
-        mapCode: '310 452 355*00',
-        notes: '享用經典沖繩冰淇淋',
-        details: '位於久貝店，推薦紅芋、鹽金楚糕等在地限定口味。'
       }
     ],
     vegTips: [
@@ -385,7 +384,7 @@ export const itineraryData: DailyItinerary[] = [
   {
     day: 5,
     dayOfWeek: '週五',
-    theme: '雙重浮潛挑戰、黃金溫泉舒壓與健康蔬食夜',
+    theme: '海陸多重浮潛挑戰、黃金溫泉舒壓與健康精緻素食夜',
     flow: [
       {
         time: '05:30',
@@ -396,23 +395,31 @@ export const itineraryData: DailyItinerary[] = [
         details: '宮古島最東端突出海岬，日出景象氣勢磅礴。'
       },
       {
-        time: '07:30',
-        title: '返回 Hotel Miyakojima 享用早餐與補眠',
+        time: '06:45',
+        title: 'Aragusuku Beach 新城海岸浮潛',
+        type: 'attraction',
+        mapCode: '310 326 777*00',
+        notes: '調整回歸！清晨極常有海龜出沒的珊瑚礁海灘，進行晨潛',
+        details: '與東平安名岬距離僅 10 分鐘車程。早上水面平靜、遊客稀少，是極高機率與野生海龜近距離共游的浮潛天堂。'
+      },
+      {
+        time: '08:15',
+        title: '返回 Hotel Miyakojima 盥洗、享用早餐與補眠',
         type: 'hotel',
-        notes: '補眠休息，並利用廚房快速準備「無五辛純素便當」'
+        notes: '盥洗更衣，補眠休息，並利用廚房快速準備「無五辛純素便當」'
       },
       {
         time: '10:15',
         title: '抵達下一個集合地點：シギライフーチ (Shigira Beach) 停車場',
         type: 'transport',
         mapCode: '310 160 300*11',
-        notes: '請提早 15 分鐘前報到，準備第二次出海浮潛'
+        notes: '請提早 15 分鐘前報到，準備 Klook 浮潛行程'
       },
       {
         time: '10:30',
         title: 'Klook 海龜和珊瑚礁浮潛體驗 (至 13:00)',
         type: 'activity',
-        notes: '由專業導遊帶領 10:30 準時下水',
+        notes: '重要行程！由專業導遊帶領 10:30 準時下水',
         details: '正午陽光直射，海水通透度最高，呈現如果凍般的果凍海，與海龜合照效果最好。行程附帶免費水下照片影片拍攝。'
       },
       {
@@ -427,7 +434,7 @@ export const itineraryData: DailyItinerary[] = [
         type: 'activity',
         mapCode: '310 318 644*00',
         notes: '在平靜如泳池的天然內灣浮潛',
-        details: '重要行程！此處被岬角包圍，水流平靜，有大量熱帶魚與珊瑚礁，是非常安全的天然生態池。',
+        details: '補足浮潛目的！此處被岬角包圍，水流平靜，有大量熱帶魚與珊瑚礁，是非常安全的天然生態池。',
         teachingLink: '「跨時空生態對照教材」：中午在此進行浮潛，引導孩子親身體驗白天的清澈海水、珊瑚礁形態與魚類活動，並與 Day 3 晚上的「夜間叢林探索」做生態對照，深刻體會生態在晝夜之間的奇妙轉變。'
       },
       {
@@ -458,7 +465,7 @@ export const itineraryData: DailyItinerary[] = [
     vegTips: [
       {
         title: '中午飲食防踩雷 (Shigira 周邊)',
-        content: 'Shigira 度灰村周邊皆為高檔海鮮與燒肉餐廳，完全沒有安全的純素選項。今日中午必須享用早上預先做好的自備餐點，在海邊野餐。',
+        content: 'Shigira 度假村周邊皆為高檔海鮮與燒肉餐廳，完全沒有安全的純素選項。今日中午必須享用早上預先做好的自備餐點，在海邊野餐。',
         safetyRating: 5
       },
       {
