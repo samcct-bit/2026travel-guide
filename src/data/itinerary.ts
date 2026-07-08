@@ -188,7 +188,7 @@ export const itineraryData: DailyItinerary[] = [
         type: 'food',
         mapCode: '310 453 381*22',
         notes: '提供多樣的素食餐點，週二有營業',
-        details: '環境溫馨，有豐富 of 素食簡餐，距離 Hilton 度假村僅 10 分鐘車程，動線合適。'
+        details: '環境溫馨，有豐富的素食簡餐，距離 Hilton 度假村僅 10 分鐘車程，動線合適。'
       },
       {
         time: '20:30',
@@ -297,7 +297,7 @@ export const itineraryData: DailyItinerary[] = [
     vegTips: [
       {
         title: '下午茶防踩雷 (PaniPani)',
-        content: '咖啡店的點心熱壓吐司等可能抹有大蒜醬或夾火腿、洋蔥。建議主攻椰奶與芒果汁等純素飲料，避免點鹹食。',
+        content: '咖啡店的點心熱壓吐司等可能抹有大蒜醬或夾火腿、洋蔥。建議主攻椰奶與芒果汁等純素飲料，避免點鹹食. ',
         safetyRating: 3
       },
       {
@@ -397,14 +397,15 @@ export const itineraryData: DailyItinerary[] = [
         title: 'Aragusuku Beach 新城海岸 (陸上尋訪海龜)',
         type: 'attraction',
         mapCode: '310 326 777*00',
-        notes: '調整！清晨幾乎無人的靜謐海灘散步與陸上尋龜，不下水',
-        details: '與東平安名岬距離僅 10 分鐘車程。早上水面平靜、遊客稀少。此行程調整為不下水的陸上觀光與岸上尋龜，確保今天只有一次下水活動，避免衣服難乾與換裝繁瑣。'
+        notes: '調整！日出後順路散步與岸上尋龜，不下水，避免折返拉車',
+        details: '與東平安名岬距離僅 10 分鐘車程。早上水面平靜。此行程調整為不下水的陸上觀光，不需換裝與曬乾衣服，且地理位置順路，不必再特地繞回市區。'
       },
       {
-        time: '08:15',
-        title: '返回 Hotel Miyakojima 盥洗、享用早餐與補眠',
-        type: 'hotel',
-        notes: '盥洗更衣，補眠休息，並利用廚房快速準備「無五辛純素便當」'
+        time: '08:30',
+        title: '南部沿海悠閒早餐與短暫歇息',
+        type: 'food',
+        notes: '不拉車折返市區！在南部沿海找個優雅景點小憩，享受休閒清晨',
+        details: '在車上小憩，或在南部沿海長椅享受清晨溫和陽光。避開了回市區再下來的 1 小時折返拉車時間。'
       },
       {
         time: '10:15',
@@ -417,31 +418,31 @@ export const itineraryData: DailyItinerary[] = [
         time: '10:30',
         title: 'Klook 海龜和珊瑚礁浮潛體驗 (至 13:00)',
         type: 'activity',
-        notes: '今日核心水下行程！由專業導遊帶領 10:30 準時下水',
+        notes: '今日唯一水下行程！由專業導遊帶領 10:30 準時下水',
         details: '正午陽光直射，海水通透度最高，呈現如果凍般的果凍海，與海龜合照效果最好。行程附帶免費水下照片影片拍攝。'
       },
       {
         time: '13:00',
         title: '享用手作純素便當與盥洗整理',
         type: 'food',
-        notes: '在車上或海灘旁享用自備便當，隨後前往 Ingya Marine Garden'
+        notes: '在車上或海灘旁享用自備便當（前一晚備妥），隨後前往 Ingya Marine Garden'
       },
       {
         time: '14:00',
-        title: 'Ingya Marine Garden 步道散步與陸上觀察 (至 15:30)',
+        title: 'Ingya Marine Garden 步道散步與陸上觀察 (至 15:00)',
         type: 'attraction',
         mapCode: '310 318 644*00',
-        notes: '調整！不下水，沿海岬步道散步與靜態觀察地形生態',
-        details: '此處被岬角包圍，水面平靜，此行程改為純步道散步與靜態地貌觀察（不下水）。能與 Day 3 晚上的「夜間探索」做生態對比。',
+        notes: '不下水，沿海岬步道散步與靜態地貌觀察，5分鐘車程順路',
+        details: '此處被岬角包圍，此行程為純步道散步與靜態地貌觀察（不下水），完全避免多次換裝與濕衣服問題。',
         teachingLink: '「跨時空生態對照教材」：下午在此進行步道探索，引導孩子親身體驗白天的地形特徵、清澈水質與海生動態，並與 Day 3 晚上的「夜間生態探索」做對照，體會晝夜自然之奇妙。'
       },
       {
-        time: '15:30',
+        time: '15:15',
         title: 'シギラ (Shigira) 黃金溫泉',
         type: 'attraction',
         mapCode: '310 160 523*00',
-        notes: '浸泡熱帶風露天溫泉與溫水池放鬆',
-        details: '日本最南端天然溫泉。在經過上午的浮潛體力消耗後，泡湯能徹底洗去疲勞。'
+        notes: '浸泡熱帶風露天溫泉與溫水池放鬆，隨後回市區',
+        details: '就在 Shigira 海灘旁。在經過上午的浮潛體力消耗後，泡湯能徹底洗去疲勞並完成盥洗。泡完湯後直接開車返回市區。'
       },
       {
         time: '17:30',
@@ -449,21 +450,20 @@ export const itineraryData: DailyItinerary[] = [
         type: 'food',
         mapCode: '310 453 194*44',
         notes: '提供健康蔬食餐點與奶昔，週三公休 (今日有營業，注意營業至 18:00)',
-        details: '提供健康的素食菜單與美味奶昔，因營業至 18:00，在此享用早期晚餐或外帶回公寓。'
+        details: '返回市區後在輕食店享用早期晚餐。'
       },
       {
-        time: '21:00',
-        title: '東平安名岬看銀河',
+        time: '19:30',
+        title: '返回 Hotel Miyakojima 休息與夜間觀星',
         type: 'attraction',
-        mapCode: '310 215 529*66',
-        notes: '前往最東端，肉眼欣賞夏季銀河',
-        details: '夜晚幾乎零光害，可以觀賞跨越星空的壯麗銀河，畫下完美收官夜。'
+        notes: '優化防拉車！今晚於市區或伊良部大橋旁觀星，取消拉車去東平安名岬',
+        details: '今天強度極高，晚上取消長途拉車去最東端（來回 70 分鐘車程），改在離公寓 5-10 分鐘的伊良部大橋旁或飯店陽台觀星，隨後早點休息。'
       }
     ],
     vegTips: [
       {
         title: '中午飲食防踩雷 (Shigira 周邊)',
-        content: 'Shigira 度假村周邊皆為高檔海鮮與燒肉餐廳，完全沒有安全的純素選項。今日中午必須享用早上預先做好的自備餐點，在海邊野餐。',
+        content: 'Shigira 度假村周邊皆為高檔海鮮與燒肉餐廳，無安全純素選項。今日中午必須享用昨日 AEON 買好的餐點，在海邊野餐。',
         safetyRating: 5
       },
       {
