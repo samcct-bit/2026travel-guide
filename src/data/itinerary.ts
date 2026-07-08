@@ -51,6 +51,7 @@ export const mapCodeList: MapCodeEntry[] = [
   { name: 'Blue Seal 冰淇淋 (久貝店)', code: '310 452 355*00', note: '經典沖繩連鎖冰淇淋' },
   { name: '東平安名岬 (日出/銀河)', code: '310 215 529*66', note: '最東端海岬，觀星與日出首選' },
   { name: 'Aragusuku Beach 新城海岸 (看海龜)', code: '310 326 777*00', note: '熱門海龜浮潛海灘，水淺珊瑚多' },
+  { name: 'Shigira Beach (海龜浮潛集合點)', code: '310 160 300*11', note: 'Shigira 度假村浮潛點' },
   { name: 'Ingya Marine Garden (浮潛/夜驚奇)', code: '310 318 644*00', note: '天然內灣生態池，極佳浮潛點' },
   { name: 'シギラ (Shigira) 黃金溫泉', code: '310 160 523*00', note: '天然溫泉與全家戲水溫水池' },
   { name: 'Blue Turtle Farm Mango Cafe', code: '310 451 888*44', note: '芒果農場直營甜點與素沙拉' },
@@ -133,7 +134,7 @@ export const itineraryData: DailyItinerary[] = [
         title: '砂山海灘戲水',
         type: 'attraction',
         mapCode: '310 512 437*33',
-        notes: '晨間遊玩，避開正午烈日',
+        notes: '砂山海灘晨間玩水',
         details: '欣賞著名的拱門狀天然海蝕岩，踩踩清涼的海水。'
       },
       {
@@ -150,8 +151,8 @@ export const itineraryData: DailyItinerary[] = [
         title: '雪鹽工廠',
         type: 'attraction',
         mapCode: '310 724 167*00',
-        notes: '認識沖繩雪鹽製程',
-        details: '可以採購在地名產雪鹽及相關保養品、調味鹽。'
+        notes: '參觀製鹽過程，享用雪鹽霜淇淋',
+        details: '可以採購在地名產雪鹽及相關產品。'
       },
       {
         time: '12:30',
@@ -214,13 +215,21 @@ export const itineraryData: DailyItinerary[] = [
   {
     day: 3,
     dayOfWeek: '週三',
-    theme: '來間島探索與夜行性生態探險',
+    theme: '新城海岸海龜浮潛、來間島探索與夜探生態',
     flow: [
       {
-        time: '11:30',
-        title: '辦理退房，出發前往市區',
-        type: 'transport',
-        notes: '離開 Hilton 往南部出發'
+        time: '08:30',
+        title: 'Aragusuku Beach 新城海岸浮潛',
+        type: 'attraction',
+        mapCode: '310 326 777*00',
+        notes: '海龜極常出沒的珊瑚礁海灘，進行晨間浮潛',
+        details: '新加入行程！此處水淺珊瑚豐富，早上光線柔和，是極高機率與野生海龜共游的浮潛天堂。'
+      },
+      {
+        time: '11:00',
+        title: '返回 Canopy by Hilton 盥洗並辦理退房',
+        type: 'hotel',
+        notes: '淋浴更衣後退房，準備前往市區'
       },
       {
         time: '12:00',
@@ -252,7 +261,7 @@ export const itineraryData: DailyItinerary[] = [
         type: 'attraction',
         mapCode: '310 250 120*11',
         notes: '漫步來間島安靜的西海岸沙灘',
-        details: '此沙灘隱密幽靜，沙子柔軟，非常適合吹海風與撿貝殼。'
+        details: '此沙灘隱密幽靜，沙子柔軟，非常適合吹海風與欣賞海景。'
       },
       {
         time: '16:30',
@@ -296,7 +305,7 @@ export const itineraryData: DailyItinerary[] = [
       },
       {
         title: '重要：自備明日 (Day 4) 出海午餐',
-        content: '明日浮潛船家提供的便當 99% 有鰹魚高湯或肉類，且無素食可選。請在今日 AEON 大採購時買好純素飯糰、香蕉、麵包，或在晚上自炊時多做一份豆腐三明治帶上船。',
+        content: '明日阻礙重重的出海行程，船家提供的便當無素食。請在今日 AEON 大採購時買好純素飯糰、香蕉、麵包，或在自炊時多做一份豆腐三明治帶上船。',
         safetyRating: 5
       }
     ],
@@ -376,7 +385,7 @@ export const itineraryData: DailyItinerary[] = [
   {
     day: 5,
     dayOfWeek: '週五',
-    theme: '東南岸海陸浮潛與黃金溫泉、健康素食',
+    theme: '雙重浮潛挑戰、黃金溫泉舒壓與健康蔬食夜',
     flow: [
       {
         time: '05:30',
@@ -390,46 +399,44 @@ export const itineraryData: DailyItinerary[] = [
         time: '07:30',
         title: '返回 Hotel Miyakojima 享用早餐與補眠',
         type: 'hotel',
-        notes: '並利用廚房快速準備「無五辛純素手作便當」'
+        notes: '補眠休息，並利用廚房快速準備「無五辛純素便當」'
       },
       {
-        time: '09:30',
-        title: 'Aragusuku Beach 新城海岸浮潛',
-        type: 'attraction',
-        mapCode: '310 326 777*00',
-        notes: '海龜極常出沒的珊瑚礁海灘',
-        details: '新加入景點！此處水淺且珊瑚礁豐富，適合自由下水浮潛尋找野生海龜。'
+        time: '10:15',
+        title: '抵達下一個集合地點：シギライフーチ (Shigira Beach) 停車場',
+        type: 'transport',
+        mapCode: '310 160 300*11',
+        notes: '請提早 15 分鐘前報到，準備第二次出海浮潛'
       },
       {
-        time: '12:00',
-        title: '享用手作純素便當與盥洗',
-        type: 'food',
-        notes: '在海邊或車上野餐，隨後前往 Ingya Marine Garden'
+        time: '10:30',
+        title: 'Klook 海龜和珊瑚礁浮潛體驗 (至 13:00)',
+        type: 'activity',
+        notes: '由專業導遊帶領 10:30 準時下水',
+        details: '正午陽光直射，海水通透度最高，呈現如果凍般的果凍海，與海龜合照效果最好。行程附帶免費水下照片影片拍攝。'
       },
       {
         time: '13:00',
-        title: 'Ingya Marine Garden 浮潛',
+        title: '享用手作純素便當與盥洗整理',
+        type: 'food',
+        notes: '在車上或海灘旁享用自備便當，隨後前往 Ingya Marine Garden'
+      },
+      {
+        time: '14:00',
+        title: 'Ingya Marine Garden 浮潛 (至 15:30)',
         type: 'activity',
         mapCode: '310 318 644*00',
         notes: '在平靜如泳池的天然內灣浮潛',
-        details: '新加入浮潛行程！補足 V2 版本未達成的浮潛目的。此處被岬角包圍，水流平靜，有大量熱帶魚與小丑魚。',
-        teachingLink: '「跨時空生態對照教材」：中午在此進行浮潛，帶領孩子親身體驗白天的清澈海水、珊瑚礁形態與魚類活動，並與 Day 3 晚上的「夜間叢林與潮間帶探索」做行為對照，深刻體會生態在晝夜之間的奇妙轉變。'
+        details: '重要行程！此處被岬角包圍，水流平靜，有大量熱帶魚與珊瑚礁，是非常安全的天然生態池。',
+        teachingLink: '「跨時空生態對照教材」：中午在此進行浮潛，引導孩子親身體驗白天的清澈海水、珊瑚礁形態與魚類活動，並與 Day 3 晚上的「夜間叢林探索」做生態對照，深刻體會生態在晝夜之間的奇妙轉變。'
       },
       {
-        time: '15:00',
-        title: '下午茶：Blue Turtle Farm Mango Cafe',
-        type: 'food',
-        mapCode: '310 451 888*44',
-        notes: '營業至 17:00，浮潛完享受新鮮芒果汁與沙拉',
-        details: '芒果農場直營的網美店，提供清爽的純素沙拉與現打芒果飲品。'
-      },
-      {
-        time: '16:00',
+        time: '15:30',
         title: 'シギラ (Shigira) 黃金溫泉',
         type: 'attraction',
         mapCode: '310 160 523*00',
-        notes: '浸泡熱帶風露天溫泉與戲水池',
-        details: '日本最南端天然溫泉，能徹底洗去連續兩天高強度浮潛的疲勞。'
+        notes: '浸泡熱帶風露天溫泉與戲水池泡湯',
+        details: '日本最南端天然溫泉。全家可同穿泳衣在超大溫泉游泳池戲水，徹底洗去浮潛疲勞。'
       },
       {
         time: '17:30',
@@ -437,21 +444,21 @@ export const itineraryData: DailyItinerary[] = [
         type: 'food',
         mapCode: '310 453 194*44',
         notes: '提供健康蔬食餐點與奶昔，週三公休 (今日有營業，注意營業至 18:00)',
-        details: '新加入素食點！提供健康的素食菜單與美味奶昔，因營業至 18:00，建議在此享用早期晚餐或外帶回公寓。'
+        details: '提供健康的素食菜單與美味奶昔，因營業至 18:00，在此享用早期晚餐或外帶回公寓。'
       },
       {
         time: '21:00',
         title: '東平安名岬看銀河',
         type: 'attraction',
         mapCode: '310 215 529*66',
-        notes: '再次前往最東端，肉眼欣賞夏季銀河',
+        notes: '前往最東端，肉眼欣賞夏季銀河',
         details: '夜晚幾乎零光害，可以觀賞跨越星空的壯麗銀河，畫下完美收官夜。'
       }
     ],
     vegTips: [
       {
         title: '中午飲食防踩雷 (Shigira 周邊)',
-        content: 'Shigira 度假村周邊皆為高檔海鮮與燒肉餐廳，完全沒有安全的純素選項。今日中午必須享用早上預先做好的自備餐點，在海邊野餐。',
+        content: 'Shigira 度灰村周邊皆為高檔海鮮與燒肉餐廳，完全沒有安全的純素選項。今日中午必須享用早上預先做好的自備餐點，在海邊野餐。',
         safetyRating: 5
       },
       {
@@ -475,12 +482,20 @@ export const itineraryData: DailyItinerary[] = [
         details: '可以購買當地特產純黑糖、芒果乾等，順路逛逛西里商店街。'
       },
       {
-        time: '11:00',
+        time: '10:30',
+        title: 'Blue Turtle Farm Mango Cafe',
+        type: 'food',
+        mapCode: '310 451 888*44',
+        notes: '品嚐芒果甜點與新鮮現打芒果汁',
+        details: '芒果農場直營的網美甜點店，營業時間 10-17 時。在回台前享受純粹的宮古島芒果美味。'
+      },
+      {
+        time: '11:15',
         title: '午餐：Cafe 373 & Spices',
         type: 'food',
         mapCode: '310 454 112*00',
         notes: '享用南國香料風斯里蘭卡素食咖哩，週六有營業',
-        details: '新加入素食點！提供充滿香氣、溫和美味的斯里蘭卡蔬食咖哩，為本次旅程畫下完美句點。'
+        details: '提供充滿香氣、溫和美味的斯里蘭卡蔬食咖哩，為本次旅程畫下完美句點。'
       },
       {
         time: '12:30',
