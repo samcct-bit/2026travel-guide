@@ -24,12 +24,12 @@ function App() {
     return 'dark';
   });
 
-  // Active Tab: 1-6 for days, 0 for MapCode list
+  // Active Tab: 1-6 for days, 0 for MapCode list, -1 for Google Maps
   const [activeTab, setActiveTab] = useState<number>(() => {
     const saved = localStorage.getItem('miyakojima-active-tab');
     if (saved) {
       const parsed = parseInt(saved, 10);
-      if (parsed >= 0 && parsed <= 6) return parsed;
+      if (parsed >= -1 && parsed <= 6) return parsed;
     }
     return 1;
   });
@@ -221,6 +221,15 @@ function App() {
               <span className="tab-button-desc">全島導航</span>
             </button>
           </li>
+          <li>
+            <button
+              className={`tab-button ${activeTab === -1 ? 'active' : ''}`}
+              onClick={() => setActiveTab(-1)}
+            >
+              <span>自訂地圖</span>
+              <span className="tab-button-desc">Google Maps</span>
+            </button>
+          </li>
         </ul>
       </nav>
 
@@ -300,7 +309,7 @@ function App() {
                         </div>
 
                         {activity.notes && (
-                          <p className="timeline-notes">{activity.notes}</p>
+                           <p className="timeline-notes">{activity.notes}</p>
                         )}
 
                         {/* Collapsible details */}
@@ -412,7 +421,7 @@ function App() {
             </div>
           </aside>
         </div>
-      ) : (
+      ) : activeTab === 0 ? (
         /* MapCode Directory Tab */
         <div className="mapcode-search-panel glass-panel">
           <div className="filter-bar">
@@ -459,6 +468,27 @@ function App() {
               ))}
             </div>
           )}
+        </div>
+      ) : (
+        /* Google My Maps Embed Tab */
+        <div className="google-maps-panel glass-panel">
+          <div className="filter-bar" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px' }}>
+            <span className="day-theme-title">宮古島 Google 我的地圖 (自訂規劃)</span>
+            <span style={{ fontSize: '13px', color: 'var(--text-dark-muted)' }}>
+              已整合宮古島海陸熱門景點、素食餐廳、精品咖啡與自駕住宿，支援在地圖上直接點擊與規劃路線。
+            </span>
+          </div>
+          <div className="maps-iframe-container glass-card" style={{ padding: '6px', overflow: 'hidden', height: '620px', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+            <iframe
+              src="https://www.google.com/maps/d/embed?mid=1xPBlVw2djM31XMupsaG7EEbNEWGzX-w&ehbc=2E312F"
+              width="100%"
+              height="100%"
+              style={{ border: 0, borderRadius: '12px' }}
+              allowFullScreen
+              loading="lazy"
+              title="Miyakojima Custom Google Map"
+            ></iframe>
+          </div>
         </div>
       )}
 
