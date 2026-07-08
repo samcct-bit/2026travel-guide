@@ -54,6 +54,7 @@ export const mapCodeList: MapCodeEntry[] = [
   { name: 'Ingya Marine Garden (浮潛/夜驚奇)', code: '310 318 644*00', note: '天然內灣生態池，極佳浮潛點' },
   { name: 'シギラ (Shigira) 黃金溫泉', code: '310 160 523*00', note: '天然溫泉與全家戲水溫水池' },
   { name: 'natural protein (素食簡餐)', code: '310 453 194*44', note: '提供素食菜單、奶昔與餐點，週三休 (10-18時)' },
+  { name: 'Hi Sun CAFE (素食友善簡餐)', code: '310 453 381*22', note: '溫馨舒適的素食簡餐店' },
   { name: 'Cafe 373 & Spices (咖哩)', code: '310 454 112*00', note: '美味斯里蘭卡風味素食咖哩，週三休' },
   { name: '宮古島公設市場', code: '310 453 194*44', note: '採購伴手禮黑糖與農特產' }
 ];
@@ -183,12 +184,12 @@ export const itineraryData: DailyItinerary[] = [
         notes: '辦理登記入住，享受度假村設施與泳池'
       },
       {
-        time: '18:30',
-        title: '晚餐：Hi Sun CAFE',
+        time: '17:30',
+        title: '晚餐：natural protein',
         type: 'food',
-        mapCode: '310 453 381*22',
-        notes: '提供多樣的素食餐點，週二有營業',
-        details: '環境溫馨，有豐富的素食簡餐，距離 Hilton 度假村僅 10 分鐘車程，動線合適。'
+        mapCode: '310 453 194*44',
+        notes: '對調優化！提供健康蔬食與能量餐點，週三休 (今日有營業，注意 18:00 關門)',
+        details: '將 natural protein 移至今日晚餐。由於今天 15:00 即入住 Hilton，時間極為充裕，可優雅地在 18:00 關門前前往市區享用健康蔬食與果昔，完美利用今天寬鬆的步調。'
       },
       {
         time: '20:30',
@@ -204,9 +205,9 @@ export const itineraryData: DailyItinerary[] = [
         safetyRating: 4
       },
       {
-        title: '晚餐首選：Hi Sun CAFE',
-        content: 'V2 版本修改！第一天改吃 Island Brewing，第二天晚餐則在此享用，位置鄰近 Hilton，提供更舒適安全的素食簡餐。',
-        safetyRating: 4
+        title: '晚餐推薦：natural protein',
+        content: '今日在 15:00 入住希爾頓後無其他行程，極為適合在 18:00 關門前前往 natural protein 享用精緻健康的能量碗與水果奶昔，對調後極度寬鬆。',
+        safetyRating: 5
       }
     ]
   },
@@ -265,7 +266,7 @@ export const itineraryData: DailyItinerary[] = [
         title: '大採買時間 (AEON MaxValu + Nishigaki 超市 + Atarasu 農協市場)',
         type: 'shopping',
         notes: '採買新鮮宮古島芒果與自炊食材',
-        details: '為今晚的公寓自炊與明日出海的午餐做好補給，採購芒果、吐司、島豆腐及純素咖哩。'
+        details: '為今晚的公寓自炊與明天出海的午餐做好補給，採購芒果、吐司、島豆腐及純素咖哩。'
       },
       {
         time: '18:00',
@@ -297,7 +298,7 @@ export const itineraryData: DailyItinerary[] = [
     vegTips: [
       {
         title: '下午茶防踩雷 (PaniPani)',
-        content: '咖啡店的點心熱壓吐司等可能抹有大蒜醬或夾火腿、洋蔥。建議主攻椰奶與芒果汁等純素飲料，避免點鹹食. ',
+        content: '咖啡店的點心熱壓吐司等可能抹有大蒜醬或夾火腿、洋蔥。建議主攻椰奶與芒果汁等純素飲料，避免點鹹食。',
         safetyRating: 3
       },
       {
@@ -382,7 +383,7 @@ export const itineraryData: DailyItinerary[] = [
   {
     day: 5,
     dayOfWeek: '週五',
-    theme: '海龜浮潛體驗、黃金溫泉舒壓與健康精緻素食夜',
+    theme: '海龜浮潛體驗、黃金溫泉舒壓與精緻溫馨素食夜',
     flow: [
       {
         time: '05:30',
@@ -445,19 +446,25 @@ export const itineraryData: DailyItinerary[] = [
         details: '就在 Shigira 海灘旁。在經過上午的浮潛體力消耗後，泡湯能徹底洗去疲勞並完成盥洗。泡完湯後直接開車返回市區。'
       },
       {
-        time: '17:30',
-        title: '晚餐：natural protein',
-        type: 'food',
-        mapCode: '310 453 194*44',
-        notes: '提供健康蔬食餐點與奶昔，週三公休 (今日有營業，注意營業至 18:00)',
-        details: '返回市區後在輕食店享用早期晚餐。'
+        time: '17:00',
+        title: '返回 Hotel Miyakojima 公寓洗澡換裝與稍作休息',
+        type: 'hotel',
+        notes: '開車返回平良市區，公寓洗熱水澡與徹底放鬆，時間極為充裕'
       },
       {
-        time: '19:30',
-        title: '返回 Hotel Miyakojima 休息與夜間觀星',
+        time: '18:30',
+        title: '晚餐：Hi Sun CAFE',
+        type: 'food',
+        mapCode: '310 453 381*22',
+        notes: '對調優化！前往溫馨的素食簡餐店享用晚餐，時間極為充裕無壓力',
+        details: '今日與 Day 2 晚餐對調。Hi Sun CAFE 營業時間較晚且無 18:00 關門限制。全家可先回公寓舒舒服服洗澡更衣，再散步或開車前往市區享用溫馨又豐盛的素食簡餐。'
+      },
+      {
+        time: '20:30',
+        title: '夜間觀星',
         type: 'attraction',
-        notes: '優化防拉車！今晚於市區或伊良部大橋旁觀星，取消拉車去東平安名岬',
-        details: '今天強度極高，晚上取消長途拉車去最東端（來回 70 分鐘車程），改在離公寓 5-10 分鐘的伊良部大橋旁或飯店陽台觀星，隨後早點休息。'
+        notes: '在平良港區或伊良部大橋旁觀星，隨後休息',
+        details: '取消長途拉車去最東端的折返跑，改在離公寓 5-10 分鐘的伊良部大橋旁欣賞璀璨星空。'
       }
     ],
     vegTips: [
@@ -467,9 +474,9 @@ export const itineraryData: DailyItinerary[] = [
         safetyRating: 5
       },
       {
-        title: '晚餐推薦：natural protein',
-        content: 'V2 版本修改！避開高風險海鮮餐廳，改吃健康的蔬食輕食店（週五有營業）。注意營業時間至 18:00，需在 17:30 左右抵達。',
-        safetyRating: 5
+        title: '晚餐首選：Hi Sun CAFE',
+        content: '對調優化！Hi Sun CAFE 提供多樣安心的素食簡餐與主食。今晚沒有急促的關門時間限制，您可以極其悠閒地享受溫馨的晚餐。',
+        safetyRating: 4
       }
     ]
   },
