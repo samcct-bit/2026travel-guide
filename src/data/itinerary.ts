@@ -32,7 +32,6 @@ export interface MapCodeEntry {
 export const mapCodeList: MapCodeEntry[] = [
   { name: '17END (幻之沙灘)', code: '727 702 329*60', note: '下地島跑道盡頭絕景' },
   { name: '渡口の浜 (細白沙灘)', code: '727 611 405*25', note: '伊良部島極細沙灘，順路走走' },
-  { name: 'Sunset beach (久松夕陽)', code: '310 450 710*00', note: '西海岸最佳落日觀賞點' },
   { name: '砂山海灘 (天然石洞)', code: '310 512 437*33', note: '北部著名天然拱門岩石' },
   { name: '宮古島海中公園', code: '310 723 821*28', note: '玻璃窗觀察海底生態' },
   { name: '雪鹽工廠', code: '310 724 167*00', note: '參觀雪鹽製作與吃雪鹽霜淇淋' },
@@ -54,7 +53,6 @@ export const mapCodeList: MapCodeEntry[] = [
   { name: 'Shigira Beach (海龜浮潛集合點)', code: '310 160 300*11', note: 'Shigira 度假村浮潛點' },
   { name: 'Ingya Marine Garden (浮潛/夜驚奇)', code: '310 318 644*00', note: '天然內灣生態池，極佳浮潛點' },
   { name: 'シギラ (Shigira) 黃金溫泉', code: '310 160 523*00', note: '天然溫泉與全家戲水溫水池' },
-  { name: 'Blue Turtle Farm Mango Cafe', code: '310 451 888*44', note: '芒果農場直營甜點與素沙拉' },
   { name: 'natural protein (素食簡餐)', code: '310 453 194*44', note: '提供素食菜單、奶昔與餐點，週三休 (10-18時)' },
   { name: 'Cafe 373 & Spices (咖哩)', code: '310 454 112*00', note: '美味斯里蘭卡風味素食咖哩，週三休' },
   { name: '宮古島公設市場', code: '310 453 194*44', note: '採購伴手禮黑糖與農特產' }
@@ -89,21 +87,21 @@ export const itineraryData: DailyItinerary[] = [
         details: '位於伊良部島南部，沙質極為細白，海水清澈見底。'
       },
       {
-        time: '16:30',
-        title: 'Sunset beach (久松) 看夕陽',
-        type: 'attraction',
-        mapCode: '310 450 710*00',
-        notes: '考察西海岸落日景色',
-        details: '開車穿越壯觀的伊良部大橋後，前往久松的 Sunset beach，這是西海岸觀賞落日的黃金位置。'
-      },
-      {
-        time: '18:00',
+        time: '17:00',
         title: 'Hotel California Miyakojima Resort 辦理登記並入住 ecot Sunayama Beach',
         type: 'hotel',
         notes: '入住 ecot 靠近砂山海灘的公寓型住宅'
       },
       {
-        time: '19:00',
+        time: '18:30',
+        title: '砂山海灘日落',
+        type: 'attraction',
+        mapCode: '310 512 437*33',
+        notes: '欣賞天然石洞夕陽',
+        details: '穿過白色沙丘後映入眼簾的是天然海蝕石洞，配上落日餘暉，是宮古島最經典的明信片級畫面。'
+      },
+      {
+        time: '19:30',
         title: '晚餐：Island Brewing Miyakojima',
         type: 'food',
         mapCode: '310 453 381*22',
@@ -171,18 +169,18 @@ export const itineraryData: DailyItinerary[] = [
         details: '週三公休（今日週二有開！）。就位於池間島旁，動線完美順路，提供適合素食者的美味披薩與冰淇淋。'
       },
       {
+        time: '14:15',
+        title: '下午茶咖啡：Doug’s Coffee',
+        type: 'food',
+        mapCode: '310 452 435*88',
+        notes: '調整時間！品嚐果香濃郁的淺焙手沖咖啡，確保在下午三點前享用',
+        details: '開車至市區約 10 分鐘，享受職人現沖的高品質咖啡。將咖啡時間提早至 15:00 前，避免晚喝咖啡影響睡眠。'
+      },
+      {
         time: '15:00',
         title: '入住 Canopy by Hilton',
         type: 'hotel',
         notes: '辦理登記入住，享受度假村設施與泳池'
-      },
-      {
-        time: '17:30',
-        title: '下午茶咖啡：Doug’s Coffee',
-        type: 'food',
-        mapCode: '310 452 435*88',
-        notes: '品嚐果香濃郁的淺焙手沖咖啡',
-        details: '開車至市區約 10 分鐘，享受職人現沖的高品質咖啡。'
       },
       {
         time: '18:30',
@@ -190,11 +188,11 @@ export const itineraryData: DailyItinerary[] = [
         type: 'food',
         mapCode: '310 453 381*22',
         notes: '提供多樣的素食餐點，週二有營業',
-        details: '環境溫馨，有豐富的素食簡餐，距離 Hilton 度假村僅 10 分鐘車程，動線合適。'
+        details: '環境溫馨，有豐富 of 素食簡餐，距離 Hilton 度假村僅 10 分鐘車程，動線合適。'
       },
       {
         time: '20:30',
-        title: '飯店露台或伊良部大橋旁觀星',
+        title: '飯店視角或伊良部大橋旁觀星',
         type: 'attraction',
         notes: '宮古島夜空無光害，繁星璀璨'
       }
@@ -221,8 +219,8 @@ export const itineraryData: DailyItinerary[] = [
         time: '08:00',
         title: '專注享受 Hilton 飯店設施與美味早餐',
         type: 'hotel',
-        notes: '今日上午無外安排景點，在希爾頓度假村享受悠閒時光',
-        details: '悠閒享用 Hilton 豐盛的自助早餐，隨後使用度假村的高空泳池、健身房或沙灘散步，完全放鬆身心。'
+        notes: '今日上午不外排景點，在希爾頓度假村享受悠閒時光',
+        details: '悠閒享用 Hilton 豐盛的自助早餐，隨後使用度假村的泳池設施、健身房或散步，完全放鬆身心，享受五星飯店價值。'
       },
       {
         time: '11:30',
@@ -260,14 +258,14 @@ export const itineraryData: DailyItinerary[] = [
         type: 'attraction',
         mapCode: '310 250 120*11',
         notes: '漫步來間島安靜的西海岸沙灘',
-        details: '此沙灘隱密幽靜，沙子柔軟，非常適合吹海風與欣賞海景。'
+        details: '此沙灘隱密幽靜，沙子柔軟，非常適合吹海風與欣賞落日前奏的海景。'
       },
       {
         time: '16:30',
         title: '大採買時間 (AEON MaxValu + Nishigaki 超市 + Atarasu 農協市場)',
         type: 'shopping',
         notes: '採買新鮮宮古島芒果與自炊食材',
-        details: '為今晚的公寓自炊與明天出海的午餐做好補給，採購芒果、吐司、島豆腐及純素咖哩。'
+        details: '為今晚的公寓自炊與明日出海的午餐做好補給，採購芒果、吐司、島豆腐及純素咖哩。'
       },
       {
         time: '18:00',
@@ -310,7 +308,7 @@ export const itineraryData: DailyItinerary[] = [
     ],
     educationalNotes: [
       '夜遊行政提醒：夜間探索園區完全沒有路燈，且蚊蟲繁多，全家務必換穿長袖薄外衣、長褲、運動鞋（嚴禁拖鞋與涼鞋），並在 19:45 前在房間完成如廁。',
-      '蔡老師教學連結：伊姆哥亞海濱公園 (Ingya Marine Garden) 是天然的封閉海灣。今晚夜遊帶領孩子在黑暗中觀察夜行性底棲與陸生生物，與 Day 5 中午的白天生態進行對照。'
+      '蔡老師教學連結：伊姆哥亞海濱公園 (Ingya Marine Garden) 是天然的封閉海灣。今晚夜遊帶領孩子在黑暗中觀察夜行性底棲與陸生生物，與 Day 5 下午的白天生態進行對照。'
     ]
   },
   {
@@ -384,7 +382,7 @@ export const itineraryData: DailyItinerary[] = [
   {
     day: 5,
     dayOfWeek: '週五',
-    theme: '海陸多重浮潛挑戰、黃金溫泉舒壓與健康精緻素食夜',
+    theme: '海龜浮潛體驗、黃金溫泉舒壓與健康精緻素食夜',
     flow: [
       {
         time: '05:30',
@@ -396,11 +394,11 @@ export const itineraryData: DailyItinerary[] = [
       },
       {
         time: '06:45',
-        title: 'Aragusuku Beach 新城海岸浮潛',
+        title: 'Aragusuku Beach 新城海岸 (陸上尋訪海龜)',
         type: 'attraction',
         mapCode: '310 326 777*00',
-        notes: '調整回歸！清晨極常有海龜出沒的珊瑚礁海灘，進行晨潛',
-        details: '與東平安名岬距離僅 10 分鐘車程。早上水面平靜、遊客稀少，是極高機率與野生海龜近距離共游的浮潛天堂。'
+        notes: '調整！清晨幾乎無人的靜謐海灘散步與陸上尋龜，不下水',
+        details: '與東平安名岬距離僅 10 分鐘車程。早上水面平靜、遊客稀少。此行程調整為不下水的陸上觀光與岸上尋龜，確保今天只有一次下水活動，避免衣服難乾與換裝繁瑣。'
       },
       {
         time: '08:15',
@@ -413,13 +411,13 @@ export const itineraryData: DailyItinerary[] = [
         title: '抵達下一個集合地點：シギライフーチ (Shigira Beach) 停車場',
         type: 'transport',
         mapCode: '310 160 300*11',
-        notes: '請提早 15 分鐘前報到，準備 Klook 浮潛行程'
+        notes: '請提早 15 分鐘前報到，今日唯一一次下水浮潛行程'
       },
       {
         time: '10:30',
         title: 'Klook 海龜和珊瑚礁浮潛體驗 (至 13:00)',
         type: 'activity',
-        notes: '重要行程！由專業導遊帶領 10:30 準時下水',
+        notes: '今日核心水下行程！由專業導遊帶領 10:30 準時下水',
         details: '正午陽光直射，海水通透度最高，呈現如果凍般的果凍海，與海龜合照效果最好。行程附帶免費水下照片影片拍攝。'
       },
       {
@@ -430,20 +428,20 @@ export const itineraryData: DailyItinerary[] = [
       },
       {
         time: '14:00',
-        title: 'Ingya Marine Garden 浮潛 (至 15:30)',
-        type: 'activity',
+        title: 'Ingya Marine Garden 步道散步與陸上觀察 (至 15:30)',
+        type: 'attraction',
         mapCode: '310 318 644*00',
-        notes: '在平靜如泳池的天然內灣浮潛',
-        details: '補足浮潛目的！此處被岬角包圍，水流平靜，有大量熱帶魚與珊瑚礁，是非常安全的天然生態池。',
-        teachingLink: '「跨時空生態對照教材」：中午在此進行浮潛，引導孩子親身體驗白天的清澈海水、珊瑚礁形態與魚類活動，並與 Day 3 晚上的「夜間叢林探索」做生態對照，深刻體會生態在晝夜之間的奇妙轉變。'
+        notes: '調整！不下水，沿海岬步道散步與靜態觀察地形生態',
+        details: '此處被岬角包圍，水面平靜，此行程改為純步道散步與靜態地貌觀察（不下水）。能與 Day 3 晚上的「夜間探索」做生態對比。',
+        teachingLink: '「跨時空生態對照教材」：下午在此進行步道探索，引導孩子親身體驗白天的地形特徵、清澈水質與海生動態，並與 Day 3 晚上的「夜間生態探索」做對照，體會晝夜自然之奇妙。'
       },
       {
         time: '15:30',
         title: 'シギラ (Shigira) 黃金溫泉',
         type: 'attraction',
         mapCode: '310 160 523*00',
-        notes: '浸泡熱帶風露天溫泉與戲水池泡湯',
-        details: '日本最南端天然溫泉。全家可同穿泳衣在超大溫泉游泳池戲水，徹底洗去浮潛疲勞。'
+        notes: '浸泡熱帶風露天溫泉與溫水池放鬆',
+        details: '日本最南端天然溫泉。在經過上午的浮潛體力消耗後，泡湯能徹底洗去疲勞。'
       },
       {
         time: '17:30',
@@ -489,20 +487,12 @@ export const itineraryData: DailyItinerary[] = [
         details: '可以購買當地特產純黑糖、芒果乾等，順路逛逛西里商店街。'
       },
       {
-        time: '10:30',
-        title: 'Blue Turtle Farm Mango Cafe',
-        type: 'food',
-        mapCode: '310 451 888*44',
-        notes: '品嚐芒果甜點與新鮮現打芒果汁',
-        details: '芒果農場直營的網美甜點店，營業時間 10-17 時。在回台前享受純粹的宮古島芒果美味。'
-      },
-      {
         time: '11:15',
         title: '午餐：Cafe 373 & Spices',
         type: 'food',
         mapCode: '310 454 112*00',
-        notes: '享用南國香料風斯里蘭卡素食咖哩，週六有營業',
-        details: '提供充滿香氣、溫和美味的斯里蘭卡蔬食咖哩，為本次旅程畫下完美句點。'
+        notes: '二選一優化！享用南國香料風斯里蘭卡素食咖哩，週六有營業',
+        details: '與 Mango Cafe 進行二選一，保留正餐咖哩，避免重複進食甜點吃不下。提供充滿香氣、溫和美味的斯里蘭卡蔬食咖哩，為旅程畫下完美句點。'
       },
       {
         time: '12:30',
