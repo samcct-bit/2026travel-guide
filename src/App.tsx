@@ -10,7 +10,9 @@ import {
   Utensils,
   Info,
   Calendar,
-  Compass
+  Compass,
+  Volume2,
+  Pause
 } from 'lucide-react';
 import { itineraryData, mapCodeList } from './data/itinerary';
 import type { DailyItinerary } from './data/itinerary';
@@ -71,6 +73,45 @@ function App() {
 
   // Expanded details state (store activity title)
   const [expandedActivity, setExpandedActivity] = useState<string | null>(null);
+
+  // Voice playback state
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [audioObj, setAudioObj] = useState<HTMLAudioElement | null>(null);
+
+  const playVoice = () => {
+    if (audioObj) {
+      if (isPlaying) {
+        audioObj.pause();
+        setIsPlaying(false);
+      } else {
+        audioObj.currentTime = 0;
+        audioObj.play().catch(err => console.log("Audio play failed:", err));
+        setIsPlaying(true);
+      }
+    } else {
+      const url = `${import.meta.env.BASE_URL || '/'}tsai_voice.wav`;
+      const audio = new Audio(url);
+      audio.onended = () => setIsPlaying(false);
+      audio.onerror = () => {
+        setIsPlaying(false);
+        alert("語音檔案載入失敗，請確認網頁部署完成或稍後再試。");
+      };
+      audio.play().catch(err => {
+        setIsPlaying(false);
+        console.log("Audio play failed:", err);
+      });
+      setAudioObj(audio);
+      setIsPlaying(true);
+    }
+  };
+
+  // Stop audio on tab change
+  useEffect(() => {
+    if (audioObj) {
+      audioObj.pause();
+      setIsPlaying(false);
+    }
+  }, [activeTab]);
 
   // Apply theme to body element
   useEffect(() => {
@@ -558,16 +599,26 @@ function App() {
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '10px' }}>
                   <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0ea5e9' }}>⚡ 精簡確認卡（口語速查版）</h3>
-                  <button
-                    className="filter-btn"
-                    style={{ fontSize: '11px', padding: '4px 8px' }}
-                    onClick={() => {
-                      const text = `すみません、私はお肉、魚介類、魚の出汁（かつおだし）、そしてネギ、ニンニク、玉ねぎ、ニラが食べられません。これらが入っていないメニューはありますか？`;
-                      copyToClipboard(text);
-                    }}
-                  >
-                    {copiedCode?.startsWith('すみません') ? '已複製 ✓' : '複製日文'}
-                  </button>
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    <button
+                      className={`filter-btn ${isPlaying ? 'active' : ''}`}
+                      style={{ fontSize: '11px', padding: '4px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}
+                      onClick={playVoice}
+                    >
+                      {isPlaying ? <Pause size={12} /> : <Volume2 size={12} />}
+                      {isPlaying ? '停止' : '聽蔡老師日文 🔊'}
+                    </button>
+                    <button
+                      className="filter-btn"
+                      style={{ fontSize: '11px', padding: '4px 8px' }}
+                      onClick={() => {
+                        const text = `すみません、私はお肉、魚介類、魚の出汁（かつおだし）、そしてネギ、ニンニク、玉ねぎ、ニラが食べられません。これらが入っていないメニューはありますか？`;
+                        copyToClipboard(text);
+                      }}
+                    >
+                      {copiedCode?.startsWith('すみません') ? '已複製 ✓' : '複製日文'}
+                    </button>
+                  </div>
                 </div>
                 <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', fontSize: '14.5px', lineHeight: '1.7', color: 'var(--text-dark-card)' }}>
                   <strong>すみません、私はお肉、魚介類、魚の出汁（かつおだし）、そしてネギ、ニンニク、玉ねぎ、ニラが食べられません。</strong><br /><br />
