@@ -230,6 +230,15 @@ function App() {
               <span className="tab-button-desc">Google Maps</span>
             </button>
           </li>
+          <li>
+            <button
+              className={`tab-button ${activeTab === -2 ? 'active' : ''}`}
+              onClick={() => setActiveTab(-2)}
+            >
+              <span>素食小卡</span>
+              <span className="tab-button-desc">中日對照</span>
+            </button>
+          </li>
         </ul>
       </nav>
 
@@ -469,7 +478,7 @@ function App() {
             </div>
           )}
         </div>
-      ) : (
+      ) : activeTab === -1 ? (
         /* Google My Maps Embed Tab */
         <div className="google-maps-panel glass-panel">
           <div className="filter-bar" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px' }}>
@@ -488,6 +497,127 @@ function App() {
               loading="lazy"
               title="Miyakojima Custom Google Map"
             ></iframe>
+          </div>
+        </div>
+      ) : (
+        /* Vegetarian Cards Tab (activeTab === -2) */
+        <div className="veg-cards-panel glass-panel">
+          <div className="filter-bar" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px', marginBottom: '24px' }}>
+            <span className="day-theme-title">日本點餐「五辛素/佛教純素」中日對照小卡</span>
+            <span style={{ fontSize: '13px', color: 'var(--text-dark-muted)' }}>
+              在日本餐廳點餐時，可直接出示本頁小卡給店員或主廚看，用客氣委婉的日文表達飲食限制。
+            </span>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px' }}>
+            {/* Card 1: Detailed & Extremely Polite (詳細禮貌版) */}
+            <div className="glass-card" style={{ padding: '24px', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid rgba(255,255,255,0.06)' }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '10px' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#f43f5e' }}>🟢 詳細詢問卡（禮貌委婉版）</h3>
+                  <button
+                    className="filter-btn"
+                    style={{ fontSize: '11px', padding: '4px 8px' }}
+                    onClick={() => {
+                      const text = `【飲食店スタッフの皆様へ】\nいつも大変お世話になっております。\n\n恐れ入りますが、私は宗教上の理由（または個人の信念）により、以下の食材を食べることができません。\n\n・肉類全般（牛肉、豚肉、鶏肉など）\n・魚介類全般（魚、エビ、カニ、貝類など）\n・魚の出汁（かつお出汁など）\n・五葷（ごくん）の野菜：ネギ、ニンニク、玉ねぎ、ニラ、ラッキョウ\n\n大変お手数をおかけいたしますが、これらが入っていない料理はございますでしょうか？\n（※昆布の出汁や、醤油・塩でのシンプルな味付けは問題ございません。）\n\nご多忙のところ恐縮ですが、ご対応いただけますと幸いです。よろしくお願い申し上げます。`;
+                      copyToClipboard(text);
+                    }}
+                  >
+                    {copiedCode?.startsWith('【飲食店') ? '已複製 ✓' : '複製日文'}
+                  </button>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', fontSize: '14px', lineHeight: '1.6', color: 'var(--text-dark-card)' }}>
+                  <strong>【飲食店スタッフの皆様へ】</strong><br />
+                  いつも大変お世話になっております。<br /><br />
+                  恐れ入りますが、私は宗教上の理由（または個人の信念）により、以下の食材を食べることができません。<br /><br />
+                  <ul>
+                    <li><strong>肉類全般</strong>（牛肉、豚肉、鶏肉など）</li>
+                    <li><strong>魚介類全般</strong>（魚、エビ、カニ、貝類など）</li>
+                    <li><strong>魚の出汁</strong>（かつお出汁など）</li>
+                    <li><strong>五葷（ごくん）の野菜</strong>：ネギ、ニンニク、玉ねぎ、ニラ、ラッキョウ</li>
+                  </ul>
+                  大変お手数をおかけいたしますが、<strong>これらが入っていない料理</strong>はございますでしょうか？<br />
+                  <span style={{ fontSize: '12px', color: '#10b981' }}>（※昆布の出汁や、醤油・塩でのシンプルな味付けは問題ございません。）</span><br /><br />
+                  ご多忙のところ恐縮ですが、ご対応いただけますと幸いです。よろしくお願い申し上げます。
+                </div>
+                <div style={{ fontSize: '12px', color: 'var(--text-dark-muted)', borderTop: '1px dashed rgba(255,255,255,0.08)', paddingTop: '10px' }}>
+                  <p><strong>中文意譯：</strong><br />
+                  【致餐廳工作人員】感謝您一直以來的照料。<br />
+                  抱歉，由於宗教原因（或個人信念），我無法食用以下食材：<br />
+                  • 肉類、海鮮、魚類高湯（如鰹魚高湯）<br />
+                  • 五辛蔬菜：蔥、大蒜、洋蔥、韭菜、薤菜<br />
+                  麻煩您，請問是否有不含以上食材的料理呢？<br />
+                  （※昆布高湯、醬油或鹽巴的簡單調味是可以食用的。）<br />
+                  在您百忙之中給您添麻煩非常抱歉，如蒙協助，不勝感激。</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Short & Direct (精簡口語版) */}
+            <div className="glass-card" style={{ padding: '24px', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid rgba(255,255,255,0.06)' }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '10px' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0ea5e9' }}>⚡ 精簡確認卡（口語速查版）</h3>
+                  <button
+                    className="filter-btn"
+                    style={{ fontSize: '11px', padding: '4px 8px' }}
+                    onClick={() => {
+                      const text = `すみません、私はお肉、魚介類、魚の出汁（かつおだし）、そしてネギ、ニンニク、玉ねぎ、ニラが食べられません。これらが入っていないメニューはありますか？`;
+                      copyToClipboard(text);
+                    }}
+                  >
+                    {copiedCode?.startsWith('すみません') ? '已複製 ✓' : '複製日文'}
+                  </button>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', fontSize: '14.5px', lineHeight: '1.7', color: 'var(--text-dark-card)' }}>
+                  <strong>すみません、私はお肉、魚介類、魚の出汁（かつおだし）、そしてネギ、ニンニク、玉ねぎ、ニラが食べられません。</strong><br /><br />
+                  <strong>これらが入っていないメニューはありますか？</strong><br /><br />
+                  <span style={{ fontSize: '12px', color: '#38bdf8' }}>（※出汁に魚が使われているか確認していただけると助かります。）</span>
+                </div>
+                <div style={{ fontSize: '12px', color: 'var(--text-dark-muted)', borderTop: '1px dashed rgba(255,255,255,0.08)', paddingTop: '10px' }}>
+                  <p><strong>中文意譯：</strong><br />
+                  不好意思，我不吃肉、海鮮、魚類高湯（鰹魚高湯），以及蔥、大蒜、洋蔥、韭菜。<br />
+                  請問有不含這些食材的菜單嗎？<br />
+                  （※若能幫我確認湯底是否含有魚類成分，將非常有幫助。）</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Panel 3: Vegetarian Dictionary & Tips (常用詞彙與叮嚀) */}
+            <div className="glass-card" style={{ padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.06)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#eab308', marginBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '10px' }}>
+                💡 日本點素食實用詞彙與叮嚀
+              </h3>
+              <ul style={{ paddingLeft: '16px', fontSize: '13px', lineHeight: '1.6', color: 'var(--text-dark-card)' }}>
+                <li style={{ marginBottom: '8px' }}>
+                  <strong>鰹魚高湯陷阱 (かつおだし/Katsuo Dashi)</strong>：日本極多菜餚以鰹魚做湯底，即使點的是「玉子丼」或「烏龍麵」，高湯通常也含魚。如店員面露難色，表示湯底不能換，建議不要勉強，應尋找素食專門店。
+                </li>
+                <li style={{ marginBottom: '8px' }}>
+                  <strong>「去蔥/去洋蔥」口語表達</strong>：
+                  <ul>
+                    <li>ネギ抜きでお願いします (Negi-nuki de onegaishimasu - 請幫我去蔥)</li>
+                    <li>玉ねぎ抜きでお願いします (Tamanegi-nuki de onegaishimasu - 請幫我去洋蔥)</li>
+                  </ul>
+                </li>
+                <li style={{ marginBottom: '8px' }}>
+                  <strong>五辛日文詞彙速查</strong>：
+                  <ul>
+                    <li>蔥：ネギ (Negi)</li>
+                    <li>大蒜：ニンニク (Ninniku)</li>
+                    <li>洋蔥：玉ねぎ (Tamanegi)</li>
+                    <li>韭菜：ニラ (Nira)</li>
+                    <li>薤/蕎頭：らっきょう (Rakkyo)</li>
+                  </ul>
+                </li>
+                <li style={{ marginBottom: '8px' }}>
+                  <strong>可吃物品說明</strong>：
+                  <ul>
+                    <li>昆布の出汁は大丈夫です (Kombu no dashi wa daijobu desu - 昆布高湯是沒問題的)</li>
+                    <li>醤油と塩での味付けは大丈夫です (Shoyu to shio de no ajitsuke wa daijobu desu - 用醬油與鹽巴調味是沒問題的)</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       )}
