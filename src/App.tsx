@@ -634,6 +634,47 @@ function App() {
               </div>
             </div>
 
+            {/* Card 3: Okinawan Local Tofu Customization (沖繩特色豆腐客製卡) */}
+            <div className="glass-card" style={{ padding: '24px', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid rgba(255,255,255,0.06)' }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '10px' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#10b981' }}>🍲 沖繩豆腐客製卡（在地料理版）</h3>
+                  <button
+                    className="filter-btn"
+                    style={{ fontSize: '11px', padding: '4px 8px' }}
+                    onClick={() => {
+                      const text = `【お客様からのご相談 / 飲食制限のお知らせ】\n\nこんにちは。私たちはベジタリアン（素食）です。\n肉、魚、海鮮、そして「鰹出汁（かつおだし）」や「鰹節（かつおぶし）」が食べられません。\n\nお手数をおかけしますが、調理の際、以下の対応は可能でしょうか？\n\n1. ゆし豆腐：\n   鰹出汁の代わりに、「お湯」または「昆布出汁（こんぶだし）」で温めていただけますか？（味付けは塩や醤油だけで大丈夫です）\n\n2. 島豆腐のチャンプルー（炒め物）：\n   肉、魚、鰹節、鰹出汁を一切入れずに、野菜、島豆腐、植物油、塩、醤油だけで作っていただけますか？\n\nご対応いただける場合は、教えていただけますと幸いです。よろしくお願いいたします。`;
+                      copyToClipboard(text);
+                    }}
+                  >
+                    {copiedCode?.startsWith('【お客様') ? '已複製 ✓' : '複製日文'}
+                  </button>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', fontSize: '13.5px', lineHeight: '1.6', color: 'var(--text-dark-card)' }}>
+                  <strong>【お客様からのご相談 / 飲食制限のお知らせ】</strong><br /><br />
+                  こんにちは。私たちはベジタリアン（素食）です。<br />
+                  肉、魚、海鮮、然後「鰹出汁（かつおだし）」或「鰹節（かつおぶし）」が食べられません。<br /><br />
+                  お手数をおかけしますが、調理の際、以下の対応は可能でしょうか？<br /><br />
+                  <strong>1. ゆし豆腐：</strong><br />
+                  鰹出汁の代わりに、「お湯」または「昆布出汁（こんぶだし）」で温めていただけますか？（味付けは塩や醤油だけで大丈夫です）<br /><br />
+                  <strong>2. 島豆腐のチャンプルー（炒め物）：</strong><br />
+                  肉、魚、鰹節、鰹出汁を一切入れずに、野菜、島豆腐、植物油、塩、醤油だけで作っていただけますか？<br /><br />
+                  ご対応いただける場合は、教えていただけますと幸いです。よろしくお願いいたします。
+                </div>
+                <div style={{ fontSize: '12px', color: 'var(--text-dark-muted)', borderTop: '1px dashed rgba(255,255,255,0.08)', paddingTop: '10px' }}>
+                  <p><strong>中文意譯與客製說明：</strong><br />
+                  【顧客的諮詢 / 飲食限制告知】<br />
+                  您好，我們是素食者，不吃肉、魚、海鮮，以及「鰹魚高湯/柴魚高湯」和「柴魚片」。<br />
+                  麻煩您，在料理時是否能協助做以下調整？<br />
+                  <strong>1. Yushi豆腐（沖繩水豆腐）</strong>：<br />
+                  是否能將鰹魚高湯改為用「熱水」或「昆布高湯」幫我們加熱溫熱呢？（調味僅使用鹽或醬油即可）<br />
+                  <strong>2. 島豆腐炒什錦（沖繩炒豆腐）</strong>：<br />
+                  完全不加入肉類、魚類、柴魚片、鰹魚高湯，僅使用蔬菜、島豆腐、植物油、鹽、醬油進行清炒，這樣可以嗎？<br />
+                  如果可以配合的話，麻煩請告知我們，非常感謝您。</p>
+                </div>
+              </div>
+            </div>
+
             {/* Panel 3: Vegetarian Dictionary & Tips (常用詞彙與叮嚀) */}
             <div className="glass-card" style={{ padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.06)' }}>
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#eab308', marginBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '10px' }}>
