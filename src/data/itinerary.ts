@@ -46,6 +46,7 @@ export const mapCodeList: MapCodeEntry[] = [
   { name: 'Nishigaki 超市 (西里店)', code: '310 453 381*22', note: '採買雪鹽及自炊備品', category: '購物/超市' },
   { name: 'Minaaiya (豆腐飯糰)', code: '310 452 743*11', note: '市區順路豆腐飯糰，週六休 (週三有開)', category: '餐飲/素食' },
   { name: '與那霸前濱沙灘 (與那覇前浜ビーチ)', code: '310 210 500*25', note: '東洋第一白沙灘，適合吃飯糰踏浪', category: '景點' },
+  { name: 'Painagama Beach (平良市區沙灘)', code: '310 452 742*35', note: '市區內美麗沙灘，適合傍晚踏浪看日落', category: '景點' },
   { name: 'くらしや (來間島蔬食)', code: 'klashi__ya', note: '來間島無麩質、維根手作甜點與簡餐，週二三營業', category: '餐飲/素食' },
   { name: '龍宮城展望台', code: '310 250 156*33', note: '來間島地標，眺望 Maehama 沙灘與來間大橋', category: '景點' },
   { name: 'Kiari kurimajima (刨冰)', code: 'kiari_ice', note: '來間島最好吃的刨冰甜點店', category: '餐飲/素食' },
@@ -108,20 +109,20 @@ export const itineraryData: DailyItinerary[] = [
         notes: '入住 ecot 靠近砂山海灘的公寓型住宅'
       },
       {
-        time: '18:30',
+        time: '19:00',
         title: '砂山海灘日落',
         type: 'attraction',
         mapCode: '310 512 437*33',
-        notes: '欣賞天然石洞夕陽',
-        details: '穿過白色沙丘後映入眼簾的是天然海蝕石洞，配上落日餘暉，是宮古島最經典的明信片級畫面。'
+        notes: '欣賞天然石洞夕陽（配合 19:30 日落）',
+        details: '宮古島 7 月日落約在 19:30。穿過白色沙丘後欣賞天然海蝕石洞下的落日，魔幻時刻的漸層天空與石洞剪影是全島最經典的畫面。'
       },
       {
-        time: '19:30',
+        time: '19:50',
         title: "晚餐：RESORT RESTAURANT SHISA'S CAFE & BBQ",
         type: 'food',
         mapCode: '310 514 333*17',
-        notes: '享用四種起司披薩及純蔬菜沙拉，營業至深夜',
-        details: '新加入晚餐！此餐廳距離 ecot 公寓極近，營業時間到很晚。提供精緻的四種起司披薩與純蔬菜沙拉（可客製去五辛），是自駕放鬆用餐的絕佳場所。電話：0980-79-9880。'
+        notes: '看完日落順路享用四種起司披薩及純蔬菜沙拉，營業至深夜',
+        details: '此餐廳距離砂山海灘僅 2 分鐘車程，且距離 ecot 公寓極近。營業時間到深夜，看完日落前來用餐時間極為從容。電話：0980-79-9880。'
       }
     ],
     vegTips: [
@@ -397,30 +398,32 @@ export const itineraryData: DailyItinerary[] = [
         time: '15:00',
         title: '下午茶/甜點備選：Guest House & CAFE NaNa',
         type: 'food',
-        notes: '新加入甜點！位於伊良部島，提供維根及無麩質手作甜點',
-        details: '若浮潛完時間來得及（一般營業至 16-17:00），推薦前往前里添581的 NaNa CAFE，享用精緻的純素無麩質甜點；若時間太趕，則可直接前往市區的 Blue Seal 冰淇淋與手沖咖啡。電話：0980-78-5717。'
+        notes: '位於伊良部島，提供維根及無麩質手作甜點',
+        details: '若浮潛完時間來得及（一般營業至 16-17:00），推薦前往前里添581的 NaNa CAFE，享用精緻的純素無麩質甜點。電話：0980-78-5717。'
       },
       {
         time: '16:00',
-        title: '下午茶點心：Blue Seal 冰淇淋 (久貝店)',
-        type: 'food',
-        mapCode: '310 452 355*00',
-        notes: '享用消暑冰淇淋，避免晚餐後吃甜食',
-        details: '位於久貝店，推薦紅芋、鹽金楚糕等在地限定口味。將此行程移至下午，能讓晚上的腸胃更無負擔。'
-      },
-      {
-        time: '16:45',
         title: '咖啡時光：coffee shop Majya',
         type: 'food',
         mapCode: '310 453 252*44',
-        notes: '享受職人現沖的高質感手沖黑咖啡',
-        details: '這是一間非常精緻的手沖咖啡館，享受熱騰騰或冰涼的現沖黑咖啡，能迅速恢復浮潛大消耗體力後的精神。'
+        notes: '享受職人現沖的高質感手沖黑咖啡，補給水分與精神',
+        details: '精緻手沖咖啡館，提供職人現沖咖啡，能迅速恢復浮潛後大消耗體力後的精神。'
+      },
+      {
+        time: '16:45',
+        title: '平良市區沙灘踏浪：Painagama Beach',
+        type: 'attraction',
+        mapCode: '310 452 742*35',
+        notes: '在離民宿極近的市區沙灘散步、赤腳踏浪看落日前奏',
+        details: '新加入行程！平良港旁的 Painagama Beach 設有防波堤，風浪平靜、沙質柔軟，地理位置極佳，是傍晚時分全家踏浪散步、享受舒適海風與觀看日落前奏的絕佳去處。'
       },
       {
         time: '17:45',
-        title: '返回 Hotel Miyakojima 休息',
-        type: 'hotel',
-        notes: '短暫睡覺或休息補眠'
+        title: '返回 Hotel Miyakojima 民宿，享用 Blue Seal 冰淇淋',
+        type: 'food',
+        mapCode: '310 452 355*00',
+        notes: '外帶 Blue Seal 冰淇淋回公寓，洗完澡後舒服享用消暑甜品',
+        details: '順路外帶 Blue Seal（久貝店）著名的紅芋與鹽金楚糕冰淇淋回公寓。在經歷一天的海陸探索與踏浪後，回房沖熱水澡，舒服地坐在冷氣房公寓裡享用沖繩冰淇淋，舒緩腸胃與體力負擔。'
       },
       {
         time: '18:30',
@@ -428,7 +431,7 @@ export const itineraryData: DailyItinerary[] = [
         type: 'food',
         mapCode: '310 453 381*22',
         notes: '享用素食沙拉與墨西哥餅，週四正常營業',
-        details: 'Island Brewing 移至今日晚餐。提供豐富的素食生菜沙拉、墨西哥素薄餅與精釀啤酒，營業時間為 15-23 時，週四正常營業，氣氛極佳。'
+        details: 'Island Brewing 移至今日晚餐。提供豐富的素食生菜沙拉、墨西哥素薄餅與精釀啤酒，營業時間為 15-23 時，週四正常營業。緊鄰民宿，免去長途駕車的疲勞。'
       }
     ],
     vegTips: [
@@ -450,20 +453,20 @@ export const itineraryData: DailyItinerary[] = [
     theme: '海龜浮潛體驗、黃金溫泉舒壓、精緻外帶素食與自選觀星夜',
     flow: [
       {
-        time: '05:30',
+        time: '05:50',
         title: '東平安名岬日出',
         type: 'attraction',
         mapCode: '310 215 529*66',
-        notes: '捕捉海岬絕美的第一道晨光',
-        details: '宮古島最東端突出海岬，日出景象氣勢磅礴。'
+        notes: '捕捉海岬絕美的第一道晨光（配合 06:00 日出）',
+        details: '宮古島最東端突出海岬。因 7 月日出時間接近早上六點，05:50 抵達最為剛好，不必在深夜摸黑等待太久。日出景象氣勢磅礴。'
       },
       {
-        time: '06:45',
+        time: '06:50',
         title: 'Aragusuku Beach 新城海岸 (陸上尋訪海龜)',
         type: 'attraction',
         mapCode: '310 326 777*00',
-        notes: '日出後順路散步與岸上尋龜，不下水，避免折返拉車',
-        details: '與東平安名岬距離僅 10 分鐘車程。早上水面平靜。此行程調整為不下水的陸上觀光，不需換裝與曬乾衣服，且地理位置順路，不必再特地繞回市區。'
+        notes: '清晨海龜活躍期！岸上散步尋龜，不下水，避免折返拉車',
+        details: '與東平安名岬距離僅 10 分鐘車程。早上水面平靜如鏡，海龜高機率在淺水區浮出水面呼吸。此行程不下水（不需換裝曬乾），動線極為順路。'
       },
       {
         time: '08:30',
