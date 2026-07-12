@@ -550,6 +550,46 @@ function App() {
               已整合宮古島海陸熱門景點、素食餐廳、精品咖啡與自駕住宿，支援在地圖上直接點擊與規劃路線。
             </span>
           </div>
+          <div style={{ 
+            background: 'rgba(56, 189, 248, 0.08)', 
+            border: '1px solid rgba(56, 189, 248, 0.3)', 
+            borderRadius: '12px', 
+            padding: '16px', 
+            marginBottom: '16px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '8px'
+          }}>
+            <h4 style={{ margin: 0, color: '#38bdf8', fontSize: '14.5px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px' }}>
+              📍 手機同步我的地圖集 (含新景點與客製備註)
+            </h4>
+            <p style={{ margin: 0, fontSize: '12.5px', color: 'var(--text-dark-muted)', lineHeight: '1.5' }}>
+              由於嵌入的 Google My Maps 為靜態版，<strong>為確保您能在手機 Google Maps 中看到本次新增的 50 個地點與您的自訂備註</strong>，請點擊下方按鈕開啟並加入您的共用清單：
+            </p>
+            <a 
+              href="https://maps.app.goo.gl/Rp46CgJJNcWkSQCd9" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                padding: '10px 20px',
+                fontSize: '13.5px',
+                fontWeight: 700,
+                color: '#000',
+                background: '#38bdf8',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                marginTop: '4px',
+                alignSelf: 'flex-start',
+                transition: 'opacity 0.2s'
+              }}
+            >
+              🗺️ 開啟/訂閱您的 Google Maps 自訂地圖集 (共用清單)
+            </a>
+          </div>
           <div className="maps-iframe-container glass-card" style={{ padding: '6px', overflow: 'hidden', height: '620px', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
             <iframe
               src="https://www.google.com/maps/d/embed?mid=1xPBlVw2djM31XMupsaG7EEbNEWGzX-w&ehbc=2E312F"
@@ -565,16 +605,37 @@ function App() {
       ) : (
         /* Vegetarian Cards Tab (activeTab === -2) */
         <div className="veg-cards-panel glass-panel">
-          <div className="filter-bar" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px', marginBottom: '24px' }}>
-            <span className="day-theme-title">日本點餐「五辛素/佛教純素」中日對照小卡</span>
-            <span style={{ fontSize: '13px', color: 'var(--text-dark-muted)' }}>
-              在日本餐廳點餐時，可直接出示本頁小卡給店員或主廚看，用客氣委婉的日文表達飲食限制。
-            </span>
+          <div className="filter-bar" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', marginBottom: '24px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px' }}>
+              <span className="day-theme-title">日本點餐「五辛素/佛教純素」中日對照小卡</span>
+              <span style={{ fontSize: '13px', color: 'var(--text-dark-muted)' }}>
+                在日本餐廳點餐時，可直接出示本頁小卡給店員或主廚看，用客氣委婉的日文表達飲食限制。
+              </span>
+            </div>
+            <button 
+              className="filter-btn" 
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '6px', 
+                padding: '8px 16px', 
+                fontSize: '13px', 
+                fontWeight: 600, 
+                background: '#38bdf8', 
+                color: '#000', 
+                border: 'none', 
+                borderRadius: '8px', 
+                cursor: 'pointer'
+              }}
+              onClick={() => window.print()}
+            >
+              🖨️ 列印 A4 小卡 (自動適配黑白邊框)
+            </button>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px' }}>
             {/* Card 1: Detailed & Extremely Polite (詳細禮貌版) */}
-            <div className="glass-card" style={{ padding: '24px', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid rgba(255,255,255,0.06)' }}>
+            <div className="glass-card veg-print-card" style={{ padding: '24px', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid rgba(255,255,255,0.06)' }}>
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '10px' }}>
                   <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#f43f5e' }}>🟢 詳細詢問卡（禮貌委婉版）</h3>
@@ -589,7 +650,7 @@ function App() {
                     {copiedCode?.startsWith('【飲食店') ? '已複製 ✓' : '複製日文'}
                   </button>
                 </div>
-                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', fontSize: '14px', lineHeight: '1.6', color: 'var(--text-dark-card)' }}>
+                <div className="veg-print-card-content" style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', fontSize: '14px', lineHeight: '1.6', color: 'var(--text-dark-card)' }}>
                   <strong>【飲食店スタッフの皆様へ】</strong><br />
                   いつも大変お世話になっております。<br /><br />
                   恐れ入りますが、私は宗教上の理由（または個人の信念）により、以下の食材を食べることができません。<br /><br />
@@ -603,7 +664,7 @@ function App() {
                   <span style={{ fontSize: '12px', color: '#10b981' }}>（※昆布の出汁や、醤油・塩でのシンプルな味付けは問題ございません。）</span><br /><br />
                   ご多忙のところ恐縮ですが、ご対応いただけますと幸いです。よろしくお願い申し上げます。
                 </div>
-                <div style={{ fontSize: '12px', color: 'var(--text-dark-muted)', borderTop: '1px dashed rgba(255,255,255,0.08)', paddingTop: '10px' }}>
+                <div className="veg-print-card-chinese" style={{ fontSize: '12px', color: 'var(--text-dark-muted)', borderTop: '1px dashed rgba(255,255,255,0.08)', paddingTop: '10px' }}>
                   <p><strong>中文意譯：</strong><br />
                   【致餐廳工作人員】感謝您一直以來的照料。<br />
                   抱歉，由於宗教原因（或個人信念），我無法食用以下食材：<br />
@@ -617,7 +678,7 @@ function App() {
             </div>
 
             {/* Card 2: Short & Direct (精簡口語版) */}
-            <div className="glass-card" style={{ padding: '24px', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid rgba(255,255,255,0.06)' }}>
+            <div className="glass-card veg-print-card" style={{ padding: '24px', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid rgba(255,255,255,0.06)' }}>
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '10px' }}>
                   <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0ea5e9' }}>⚡ 精簡確認卡（口語速查版）</h3>
@@ -642,12 +703,12 @@ function App() {
                     </button>
                   </div>
                 </div>
-                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', fontSize: '14.5px', lineHeight: '1.7', color: 'var(--text-dark-card)' }}>
+                <div className="veg-print-card-content" style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', fontSize: '14.5px', lineHeight: '1.7', color: 'var(--text-dark-card)' }}>
                   <strong>すみません、私はお肉、魚介類、魚の出汁（かつおだし）、そしてネギ、ニンニク、玉ねぎ、ニラが食べられません。</strong><br /><br />
                   <strong>これらが入っていないメニューはありますか？</strong><br /><br />
                   <span style={{ fontSize: '12px', color: '#38bdf8' }}>（※出汁に魚が使われているか確認していただけると助かります。）</span>
                 </div>
-                <div style={{ fontSize: '12px', color: 'var(--text-dark-muted)', borderTop: '1px dashed rgba(255,255,255,0.08)', paddingTop: '10px' }}>
+                <div className="veg-print-card-chinese" style={{ fontSize: '12px', color: 'var(--text-dark-muted)', borderTop: '1px dashed rgba(255,255,255,0.08)', paddingTop: '10px' }}>
                   <p><strong>中文意譯：</strong><br />
                   不好意思，我不吃肉、海鮮、魚類高湯（鰹魚高湯），以及蔥、大蒜、洋蔥、韭菜。<br />
                   請問有不含這些食材的菜單嗎？<br />
@@ -657,7 +718,7 @@ function App() {
             </div>
 
             {/* Card 3: Okinawan Local Tofu Customization (沖繩特色豆腐客製卡) */}
-            <div className="glass-card" style={{ padding: '24px', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid rgba(255,255,255,0.06)' }}>
+            <div className="glass-card veg-print-card" style={{ padding: '24px', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid rgba(255,255,255,0.06)' }}>
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '10px' }}>
                   <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#10b981' }}>🍲 沖繩豆腐客製卡（在地料理版）</h3>
@@ -672,7 +733,7 @@ function App() {
                     {copiedCode?.startsWith('【お客様') ? '已複製 ✓' : '複製日文'}
                   </button>
                 </div>
-                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', fontSize: '13.5px', lineHeight: '1.6', color: 'var(--text-dark-card)' }}>
+                <div className="veg-print-card-content" style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', fontSize: '13.5px', lineHeight: '1.6', color: 'var(--text-dark-card)' }}>
                   <strong>【お客様からのご相談 / 飲食制限のお知らせ】</strong><br /><br />
                   こんにちは。私たちはベジタリアン（素食）です。<br />
                   肉、魚、海鮮、然後「鰹出汁（かつおだし）」或「鰹節（かつおぶし）」が食べられません。<br /><br />
@@ -683,7 +744,7 @@ function App() {
                   肉、魚、鰹節、鰹出汁を一切入れずに、野菜、島豆腐、植物油、塩、醤油だけで作っていただけますか？<br /><br />
                   ご対応いただける場合は、教えていただけますと幸いです。よろしくお願いいたします。
                 </div>
-                <div style={{ fontSize: '12px', color: 'var(--text-dark-muted)', borderTop: '1px dashed rgba(255,255,255,0.08)', paddingTop: '10px' }}>
+                <div className="veg-print-card-chinese" style={{ fontSize: '12px', color: 'var(--text-dark-muted)', borderTop: '1px dashed rgba(255,255,255,0.08)', paddingTop: '10px' }}>
                   <p><strong>中文意譯與客製說明：</strong><br />
                   【顧客的諮詢 / 飲食限制告知】<br />
                   您好，我們是素食者，不吃肉、魚、海鮮，以及「鰹魚高湯/柴魚高湯」和「柴魚片」。<br />

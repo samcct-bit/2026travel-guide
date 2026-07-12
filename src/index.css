@@ -166,3 +166,89 @@ body.light-theme .checkmark {
     box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
   }
 }
+
+/* ==========================================================================
+   Print Styles for A4 Vegetarian Cards
+   ========================================================================== */
+@media print {
+  /* Reset body styling for print */
+  body, html, #root, .app-container {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Hide UI elements that shouldn't be printed */
+  .app-header,
+  .progress-panel,
+  .navigation-panel,
+  .sidebar-section,
+  .footer,
+  footer,
+  .filter-bar,
+  button,
+  .filter-btn,
+  .reset-btn,
+  .theme-toggle-btn {
+    display: none !important;
+  }
+
+  /* Adjust the container for printing */
+  .veg-cards-panel {
+    display: block !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Force grid elements to stack nicely in A4 */
+  .veg-cards-panel > div:last-child {
+    display: block !important;
+    grid-template-columns: none !important;
+  }
+
+  /* Style each card for clean printing and cutout */
+  .veg-print-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border: 2px dashed #000000 !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    margin-bottom: 25px !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+  }
+
+  .veg-print-card h3 {
+    color: #000000 !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    border-bottom: 1px solid #000000 !important;
+    padding-bottom: 6px !important;
+    margin-top: 0 !important;
+  }
+
+  .veg-print-card-content {
+    background: #f9f9f9 !important;
+    border: 1px solid #cccccc !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    color: #000000 !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .veg-print-card-chinese {
+    font-size: 11px !important;
+    color: #444444 !important;
+    line-height: 1.4 !important;
+  }
+}
