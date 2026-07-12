@@ -494,28 +494,50 @@ function App() {
               <p>找不到相符的景點或 MapCode，請嘗試其他關鍵字。</p>
             </div>
           ) : (
-            <div className="mapcode-grid">
-              {filteredMapCodes.map((item, idx) => (
-                <div key={idx} className="glass-card mapcode-list-card hover-scale">
-                  <div className="mapcode-info">
-                    <span className="mapcode-name">{item.name}</span>
-                    {item.note && <span className="mapcode-desc">{item.note}</span>}
-                  </div>
-                  <div className="mapcode-action">
-                    <div
-                      className="mapcode-widget"
-                      onClick={() => copyToClipboard(item.code)}
-                      style={{ marginTop: 0 }}
-                    >
-                      <MapPin size={13} />
-                      <span className="mapcode-value" style={{ fontSize: '13px' }}>{item.code}</span>
+            <div className="mapcode-categories-container" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              {(['景點', '餐飲/素食', '體驗/溫泉', '購物/超市', '住宿', '交通', '觀星'] as const).map(category => {
+                const items = filteredMapCodes.filter(item => item.category === category);
+                if (items.length === 0) return null;
+                return (
+                  <div key={category} className="mapcode-category-section">
+                    <h3 className="category-title" style={{ 
+                      fontSize: '15px', 
+                      fontWeight: 700, 
+                      color: '#38bdf8', 
+                      borderLeft: '4px solid #38bdf8', 
+                      paddingLeft: '8px', 
+                      marginBottom: '12px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px'
+                    }}>
+                      {category} ({items.length})
+                    </h3>
+                    <div className="mapcode-grid">
+                      {items.map((item, idx) => (
+                        <div key={idx} className="glass-card mapcode-list-card hover-scale">
+                          <div className="mapcode-info">
+                            <span className="mapcode-name">{item.name}</span>
+                            {item.note && <span className="mapcode-desc">{item.note}</span>}
+                          </div>
+                          <div className="mapcode-action">
+                            <div
+                              className="mapcode-widget"
+                              onClick={() => copyToClipboard(item.code)}
+                              style={{ marginTop: 0 }}
+                            >
+                              <MapPin size={13} />
+                              <span className="mapcode-value" style={{ fontSize: '13px' }}>{item.code}</span>
+                            </div>
+                            {copiedCode === item.code && (
+                              <span className="mapcode-copy-status" style={{ fontSize: '10px' }}>已複製 ✓</span>
+                            )}
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                    {copiedCode === item.code && (
-                      <span className="mapcode-copy-status" style={{ fontSize: '10px' }}>已複製 ✓</span>
-                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
